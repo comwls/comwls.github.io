@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev.comwls | Feed]]></title><description><![CDATA[comwls의 웹 개발 블로그입니다. 프론트엔드 와 PHP을 주로 다루며 백엔드와 그 외 기술에도 지속적으로 관심을 기울이고 있습니다.]]></description><link>https://comwls.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Apr 2020 17:00:11 GMT</lastBuildDate><item><title><![CDATA[Oauth2.0에 대한 정리]]></title><description><![CDATA[회사에서 프로젝트를 진행하며 Oauth에 대한 종류에 대해서 공부한것을 정리할려고 합니다. 크게 4종류만 소개하고 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev.comwls | Feed]]></title><description><![CDATA[comwls의 웹 개발 블로그입니다. 프론트엔드 와 PHP을 주로 다루며 백엔드와 그 외 기술에도 지속적으로 관심을 기울이고 있습니다.]]></description><link>https://comwls.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 22 Apr 2020 05:57:20 GMT</lastBuildDate><item><title><![CDATA[API Gateway 정리]]></title><description><![CDATA[이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다.  API Gateway란  API 게이트웨이는 API 클라이언트와 서비스 사이에 프록시 처럼 위치하여
+ 클라이언트로 부터 온 API…]]></description><link>https://comwls.github.io/api-gateway/</link><guid isPermaLink="false">https://comwls.github.io/api-gateway/</guid><pubDate>Tue, 21 Apr 2020 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다. &lt;/p&gt;
+&lt;br/&gt;
+&lt;h2 id=&quot;api-gateway란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-gateway%EB%9E%80&quot; aria-label=&quot;api gateway란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;API Gateway란&lt;/h2&gt;
+&lt;p&gt; API 게이트웨이는 API 클라이언트와 서비스 사이에 프록시 처럼 위치하여
+클라이언트로 부터 온 API 요청을 받아서, 서비스로 라우팅 하는 역할을 한다.
+각각 서비스에서 구현해야 하는 기능을 API 게이트웨이 단에서 통합함으로써,
+서비스 개발을 간편한게 할수 있고, 메세지 포멧 변경이나 플로우 컨트롤 같은
+고급 기능을 사용하여 기존 API 호출에 추가적인 기능을 더 할수 있는
+유연성을 가질수 있게 된다.&lt;/p&gt;
+&lt;h2 id=&quot;api-gateway의-대표적-기능-5가지&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-gateway%EC%9D%98-%EB%8C%80%ED%91%9C%EC%A0%81-%EA%B8%B0%EB%8A%A5-5%EA%B0%80%EC%A7%80&quot; aria-label=&quot;api gateway의 대표적 기능 5가지 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;API Gateway의 대표적 기능 5가지&lt;/h2&gt;
+&lt;h3 id=&quot;인증&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%B8%EC%A6%9D&quot; aria-label=&quot;인증 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;인증&lt;/h3&gt;
+&lt;p&gt; API 호출할때, API 호출에 대한 인증을 수행한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서버간 API 통신일 경우에는 API Key 발급&lt;/li&gt;
+&lt;li&gt;다수의 클라이언트간의 통신일 경우에는 사용자 게정 인증(Oauth) 이후 JWT 토큰 발급&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;모니터링-로깅&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EB%A1%9C%EA%B9%85&quot; aria-label=&quot;모니터링 로깅 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;모니터링, 로깅&lt;/h3&gt;
+&lt;p&gt; API 호출에 대한 모니터링을 통해서 API 별 모니터링을 할수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;API별 응답시간, 장애율, 호출 횟수를 모니터링 &lt;/li&gt;
+&lt;li&gt;API별 호출 로깅&lt;/li&gt;
+&lt;li&gt;Metering &amp;#x26; Charging
+API를 대외로 서비스 하는 경우 API의 호출량에 따라 과금이 붙는 경우에는
+호출 횟수를 통제할때 필요하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;메시지-플로우-컨트롤&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%94%8C%EB%A1%9C%EC%9A%B0-%EC%BB%A8%ED%8A%B8%EB%A1%A4&quot; aria-label=&quot;메시지 플로우 컨트롤 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;메시지 플로우 컨트롤&lt;/h3&gt;
+&lt;p&gt; 메시지 플로우 컨트롤은 클라이언트로 부터 들어온 메시지의 흐름을 바꾸는 방법, 같은 API라도 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;카날리 배포 : 버전에 따라서 구버전과 새버전으로 트래픡을 9:1로 라우팅 하는 방법&lt;/li&gt;
+&lt;li&gt;리전 변경 : 들어온 API의 클라이언트의 위치에 따라 미국이나 한국에 있는 서비스로 라우팅하는 로직&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;메시지-변경&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B3%80%EA%B2%BD&quot; aria-label=&quot;메시지 변경 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;메시지 변경&lt;/h3&gt;
+&lt;p&gt; 헤더에 있는 내용을 바디로 붙이거나, 다른 API를 호출해서 응답메시지를
+두 API를 합해서 응답을 해주는 기능등을 구현할수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;프르토콜 변환 : SOAP/XML 기반의 메세지를 REST로 변환하는 기능
+&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt;호출 패턴 변환 : API 서버가 큐를 기반으로한 비동기 메시지 처리 패터일때, API 게이트웨이에서 이를
+동기화 처리 패턴으로 변경해서 클라이언트 입장에서 동기로 호출을 하면 API서버에서는 비동기로 호출하느 형태와 같이 호출 패턴을 변경할수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;오케스트레이션-매쉬업&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98-%EB%A7%A4%EC%89%AC%EC%97%85&quot; aria-label=&quot;오케스트레이션 매쉬업 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;오케스트레이션 (매쉬업)&lt;/h3&gt;
+&lt;p&gt; API 클라이언트가 한번 호출할때 동시에 여러개의 API를 호출하도록 API 게이트웨이에서 호출 해주는 방식&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트에서 &lt;code class=&quot;language-text&quot;&gt;상품&lt;/code&gt; API를 호출하면 API 게이트웨이가 &lt;code class=&quot;language-text&quot;&gt;상품구매&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;상품 추천&lt;/code&gt; API를 호출해서
+상품 구매완료 메시지와 함께 추천 상품 리스트를 한번에 리턴하는 방식이다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Oauth2.0에 대한 정리]]></title><description><![CDATA[회사에서 프로젝트를 진행하며 Oauth에 대한 종류에 대해서 공부한것을 정리할려고 합니다. 크게 4종류만 소개하고 
 refreshToken과 device…]]></description><link>https://comwls.github.io/oauth/</link><guid isPermaLink="false">https://comwls.github.io/oauth/</guid><pubDate>Tue, 21 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 프로젝트를 진행하며 Oauth에 대한 종류에 대해서 공부한것을 정리할려고 합니다.&lt;/p&gt;
 &lt;p&gt;크게 4종류만 소개하고
 refreshToken과 device는 제외하고 진행합니다.
@@ -153,51 +199,4 @@ refreshToken과 device는 제외하고 진행합니다.
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tag, 태그 게시물 예제]]></title><description><![CDATA[게시물에 태그를 지정할 수 있습니다. 해당 게시물의 Markdown YAML Front matter은 아래와 같습니다. 가이드의 Markdown YAML Front matter를 참고하세요. 자세한 가이드는 Documents를 확인해주세요.]]></description><link>https://comwls.github.io/tag-post-example/</link><guid isPermaLink="false">https://comwls.github.io/tag-post-example/</guid><pubDate>Sun, 24 Mar 1991 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;게시물에 태그를 지정할 수 있습니다.&lt;/p&gt;
-&lt;p&gt;해당 게시물의 Markdown YAML Front matter은 아래와 같습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;---
-title: Tag, 태그 게시물 예제
-date: 2019-07-30
-tags:
-  - tag
-  - 태그
----&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;가이드의 Markdown YAML Front matter를 참고하세요.&lt;/p&gt;
-&lt;p&gt;자세한 가이드는 &lt;a href=&quot;https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless)&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Documents&lt;/a&gt;를 확인해주세요.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Image, 이미지 게시물 예제]]></title><description><![CDATA[이미지 파일이 첨부된 게시물의 예제입니다. 폴더를 만들고 폴더의 제목이 해당 게시물의 주소가 됩니다. 게시물 파일명은 index.md 로 합니다. 이미지 파일은 폴더 내에 위치시킵니다. 자세한 가이드는 Documents를 확인해주세요.]]></description><link>https://comwls.github.io/image-post-example.md/</link><guid isPermaLink="false">https://comwls.github.io/image-post-example.md/</guid><pubDate>Sun, 24 Mar 1991 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/483b2386e38636bd5d9e7357b4c6796b/67270/screenshot.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.58031088082902%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB00lEQVQ4y52SW2sUMRiG1+qN3uwhx0nmkMOeatei9G8I/igPoAi6IuKVf05hL6wj88lQaNHxzW531SKWNfDwJZnkmTchvR7aiXe3HxxX3ATLjDbMmA0WZFnGQggsxsi01uv5NHcFjvk7vW1bWPt4cWjPZKk/SiFXUv5CcL4qy3LlqmrF0VdKXeUT+Ia1z3dCIfgbrWWnpGiUlC0WtPI30lhp3WJTK4RsGeMt5FtICNExxt7vhEqJ16Gquli5L7MQmqM4bu77RGwWGN8bx2bufFNWFTAN1jeciwaiRA2+Q/huJ5R5viwWR115fFLLOCVtDAWmKI40WS6oshk5KckYVC8ozwVdJoOYf0X98YcwM2Y5mR12k/mins7vEpJQVhSUo5bOky1KMhhjHY1GnHDkJEvSvwsxsayc65xztfcBKQLF8YR8jOh7KpIsM2vJln8mNNYsy+msG/pYMyRK6SbC0hTkSpMvcAVa46iWwlhSXlwjlJwvM607JmXNcVcCSKRQfJNGbpEbrk04YuwVPnR4c59R6z05hfACwrc7YXpDeGMdPpynv+3JRdoLx4edsN/vPxwMBi9Rn6A+2wfseYr6AvXRWjYcDm9ceg/ALXDzPzjYun4C4yPqy09MVMcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;screenshot&quot;
-        title=&quot;screenshot&quot;
-        src=&quot;/static/483b2386e38636bd5d9e7357b4c6796b/799d3/screenshot.png&quot;
-        srcset=&quot;/static/483b2386e38636bd5d9e7357b4c6796b/00d96/screenshot.png 148w,
-/static/483b2386e38636bd5d9e7357b4c6796b/0b23c/screenshot.png 295w,
-/static/483b2386e38636bd5d9e7357b4c6796b/799d3/screenshot.png 590w,
-/static/483b2386e38636bd5d9e7357b4c6796b/2a3d6/screenshot.png 885w,
-/static/483b2386e38636bd5d9e7357b4c6796b/ae92f/screenshot.png 1180w,
-/static/483b2386e38636bd5d9e7357b4c6796b/67270/screenshot.png 1544w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이미지 파일이 첨부된 게시물의 예제입니다.&lt;/p&gt;
-&lt;p&gt;폴더를 만들고 폴더의 제목이 해당 게시물의 주소가 됩니다.&lt;/p&gt;
-&lt;p&gt;게시물 파일명은 index.md 로 합니다.&lt;/p&gt;
-&lt;p&gt;이미지 파일은 폴더 내에 위치시킵니다.&lt;/p&gt;
-&lt;p&gt;자세한 가이드는 &lt;a href=&quot;https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless)&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Documents&lt;/a&gt;를 확인해주세요.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Borderless Documents]]></title><description><![CDATA[블로그를 본인에 맞춰 커스터마이징하려면 우선 config.js의 수정이 필요합니다. Documents를 확인해주세요.]]></description><link>https://comwls.github.io/first-post/</link><guid isPermaLink="false">https://comwls.github.io/first-post/</guid><pubDate>Sat, 23 Mar 1991 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;블로그를 본인에 맞춰 커스터마이징하려면 우선 config.js의 수정이 필요합니다.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless)&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Documents&lt;/a&gt;를 확인해주세요.&lt;/p&gt;</content:encoded></item></channel></rss>
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
