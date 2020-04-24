@@ -63,19 +63,18 @@ keywords:
   - 좌측 항목에 Publish안에 API Proudcts를 선택한다.
   - Name, Display 항목에 내용을 채우고 아래 API resources 항목에 API proxies 항목에 Add a proxy를 선택한다.
   - 전에 만든 토큰만들기, 토큰 미들웨어 프록시 항목을 추가하고 저장한다.
-  
-  ![](Product.png)
+  ![](Product.PNG)
 
  ### Apps를 이용하여 키 발급하기 ( Client_Id, Client_Secret)
  - 좌측 항목에 Publish 안에 Apps를 선택한다.
  - Name, Display Name 을 채우고 Credntials 항목에 키값의 시간을 정한다
  - 해당 우측에 Product 항목에 Add product를 누른다.
  
-  ![](Apps.png)
+  ![](Apps.PNG)
   
  - Product를 발급하고 Restful Tool(ex:postman) 을 이용하여 발급받은 key, secret 항목을 넣어서 토쿤이 정상 발급되는지 테스트 해보면 된다.
  
-  ![](Token.png)
+  ![](Token.PNG)
    
 
 참조
