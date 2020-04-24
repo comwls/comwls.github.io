@@ -1,7 +1,7 @@
 ---
 title: Oauth2.0에 대한 정리
-date: 2020-04-21
-update: 2020-04-21
+date: 2020-04-21 00:00:00
+update: 2020-04-21 00:00:00
 tags: 
   - Oauth2.0
 keywords:

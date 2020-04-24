@@ -1,7 +1,7 @@
 module.exports = {
   /** Site MetaData (Required all)*/
   title: `Dev.comwls`,                           // (* Required)
-  description: `comwls의 웹 개발 블로그입니다. 프론트엔드 와 PHP을 주로 다루며 백엔드와 그 외 기술에도 지속적으로 관심을 기울이고 있습니다.`, // (* Required)
+  description: `comwls의 웹 개발 블로그입니다. 프론트엔드 와 PHP을 주로 다루며 nodejs와 그 외 기술에도 지속적으로 관심을 기울이고 있습니다.`, // (* Required)
   author: `comwls`,                         // (* Required)
   siteUrl: 'https://comwls.github.io',       // (* Required) 
     // ex.'https://junhobaik.github.io'
@@ -13,9 +13,9 @@ module.exports = {
     // If the file does not exist, it is replaced by a random image.
 
   /** Home > Bio information*/
-  comment: 'Web PHP && Front-end Developer. / laravel, javascript, react ...',
+  comment: 'Web PHP && Front-end Developer. / laravel, nodejs, react ...',
   name: 'comwls',
-  company: '',
+  company: 'Ntuple',
   location: 'Korea',
   email: 'comwls@naver.com',
   website: 'https://comwls.github.io',           // ex.'https://junhobaik.github.io'
