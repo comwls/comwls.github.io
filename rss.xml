@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev.comwls | Feed]]></title><description><![CDATA[comwls의 웹 개발 블로그입니다. 프론트엔드 와 PHP을 주로 다루며 nodejs와 그 외 기술에도 지속적으로 관심을 기울이고 있습니다.]]></description><link>https://comwls.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 24 Apr 2020 02:13:31 GMT</lastBuildDate><item><title><![CDATA[GCP apigee]]></title><description><![CDATA[이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다.  apigee 란  apigee(아피지,애피지)란 GCP(Google Cloud Platform)의 API Gateway로 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev.comwls | Feed]]></title><description><![CDATA[comwls의 웹 개발 블로그입니다. 프론트엔드 와 PHP을 주로 다루며 nodejs와 그 외 기술에도 지속적으로 관심을 기울이고 있습니다.]]></description><link>https://comwls.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 24 Apr 2020 08:15:52 GMT</lastBuildDate><item><title><![CDATA[GCP apigee]]></title><description><![CDATA[이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다.  apigee 란  apigee(아피지,애피지)란 GCP(Google Cloud Platform)의 API Gateway로 
  GCP…]]></description><link>https://comwls.github.io/apigee/</link><guid isPermaLink="false">https://comwls.github.io/apigee/</guid><pubDate>Wed, 22 Apr 2020 15:26:00 GMT</pubDate><content:encoded>&lt;p&gt;이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다. &lt;/p&gt;
 &lt;br/&gt;
 &lt;h2 id=&quot;apigee-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#apigee-%EB%9E%80&quot; aria-label=&quot;apigee 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;apigee 란&lt;/h2&gt;
@@ -28,8 +28,136 @@ GCP와 상관 없는 다른 엔드포인트를 호출해서 사용할수 있다.
 &lt;li&gt;Proudct를 Apps에 추가해주면 해당 키,토큰 값들이 이곳에 묶인다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;oauth-토큰-발급-프록시-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#oauth-%ED%86%A0%ED%81%B0-%EB%B0%9C%EA%B8%89-%ED%94%84%EB%A1%9D%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;oauth 토큰 발급 프록시 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;OAuth 토큰 발급 프록시 만들기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/apigee/api-platform-samples/blob/master/default-proxies/oauth/oauth.zip?raw=true&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;예시 토큰 번들 다운&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;프록시 생성 버튼을 누른다.&lt;/li&gt;
+&lt;li&gt;Upload proxy bundle 누른다&lt;/li&gt;
+&lt;li&gt;다운받은 예시 번들을 업로딩 한다&lt;/li&gt;
+&lt;li&gt;해당 URL에 /accesstoken  추가하여 POST 타입으로 데이터 전송하면 토큰이 발급예정( 아직 clinetId랑 시크릿이 없어서 발급안됨 )&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;oauth-토큰-미들웨어-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#oauth-%ED%86%A0%ED%81%B0-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;oauth 토큰 미들웨어 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;OAuth 토큰 미들웨어 만들기&lt;/h3&gt;
-&lt;h3 id=&quot;apps를-이용하여-키-발급하기--clientid-clientsecret&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#apps%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%ED%82%A4-%EB%B0%9C%EA%B8%89%ED%95%98%EA%B8%B0--clientid-clientsecret&quot; aria-label=&quot;apps를 이용하여 키 발급하기  clientid clientsecret permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Apps를 이용하여 키 발급하기 ( Client&lt;em&gt;Id, Client&lt;/em&gt;Secret)&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[API Gateway 정리]]></title><description><![CDATA[이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다.  API Gateway란  API 게이트웨이는 API 클라이언트와 서비스 사이에 프록시 처럼 위치하여
+&lt;ul&gt;
+&lt;li&gt;프록시 생성 버튼을 누른다.&lt;/li&gt;
+&lt;li&gt;Reverse proxy (most common) 을 선택 한다.&lt;/li&gt;
+&lt;li&gt;Existing API에  &lt;a href=&quot;http://mocktarget.apigee.net&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://mocktarget.apigee.net&lt;/a&gt; 추가하고&lt;/li&gt;
+&lt;li&gt;다음을 누른후 Security 항목에 OAuth 2.0을 선택하고 next룰 누른다.&lt;/li&gt;
+&lt;li&gt;Virtual Host 항목에 secure를 선택한다.&lt;/li&gt;
+&lt;li&gt;Optional Deployment에 prod(production), test 룰 선택한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;api-proxies-를-product에-추가한다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-proxies-%EB%A5%BC-product%EC%97%90-%EC%B6%94%EA%B0%80%ED%95%9C%EB%8B%A4&quot; aria-label=&quot;api proxies 를 product에 추가한다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;API Proxies 를 Product에 추가한다&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;좌측 항목에 Publish안에 API Proudcts를 선택한다.&lt;/li&gt;
+&lt;li&gt;Name, Display 항목에 내용을 채우고 아래 API resources 항목에 API proxies 항목에 Add a proxy를 선택한다.&lt;/li&gt;
+&lt;li&gt;전에 만든 토큰만들기, 토큰 미들웨어 프록시 항목을 추가하고 저장한다.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bf371dab399e826c8fddaf2e23c0a26e/2e7db/Product.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.394241417497234%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA3klEQVQoz51SWw7DIAzj/ufbGSbtk4oRHoEspmNiCDpplqxUxY3jFBNilFrrJXNOwsxSRU5eaE1KSUop7QPUERAA1j3FHoeEEBpX2g7jnBM0hRB1dgQ8BSEiiZoGOlSwrCb03rcHOO5cibxYaz8Tgjln4YIm34lMrWW7DxigYrpDI8O8N+xnTfdmi0zE6lYl6eIRGc5J2SbQXfV9zexnowYpTAg3/fihLO1v5qFZB+t7TAdid6znK6CpSXzXXdilYI4/xtzBUNR7psPMEf6liRH36owZM3ZRMdrPy77jCwq9FmK+UtQbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Product&quot;
+        title=&quot;Product&quot;
+        src=&quot;/static/bf371dab399e826c8fddaf2e23c0a26e/799d3/Product.png&quot;
+        srcset=&quot;/static/bf371dab399e826c8fddaf2e23c0a26e/00d96/Product.png 148w,
+/static/bf371dab399e826c8fddaf2e23c0a26e/0b23c/Product.png 295w,
+/static/bf371dab399e826c8fddaf2e23c0a26e/799d3/Product.png 590w,
+/static/bf371dab399e826c8fddaf2e23c0a26e/2a3d6/Product.png 885w,
+/static/bf371dab399e826c8fddaf2e23c0a26e/ae92f/Product.png 1180w,
+/static/bf371dab399e826c8fddaf2e23c0a26e/2e7db/Product.png 1806w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;apps를-이용하여-키-발급하기--clientid-clientsecret&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#apps%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%ED%82%A4-%EB%B0%9C%EA%B8%89%ED%95%98%EA%B8%B0--clientid-clientsecret&quot; aria-label=&quot;apps를 이용하여 키 발급하기  clientid clientsecret permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Apps를 이용하여 키 발급하기 ( Client&lt;em&gt;Id, Client&lt;/em&gt;Secret)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;좌측 항목에 Publish 안에 Apps를 선택한다.&lt;/li&gt;
+&lt;li&gt;Name, Display Name 을 채우고 Credntials 항목에 키값의 시간을 정한다&lt;/li&gt;
+&lt;li&gt;해당 우측에 Product 항목에 Add product를 누른다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8882a3fc84518d666907184694d4e291/2e7db/Apps.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.56367663344408%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA9klEQVQoz41S0ZKDIBDj/7/rfuUenXoVRNiFbYJlDpm2052JoMa4yeKWZbGUkpVSTFXfA+/LEzpxBQhJ7Of3bu44jkbKOZuIWK31Ahafb9vW1s7jN1feyXWb9+gwNyLRRVh9TwfrutoRo8V9b/fsbORwVcDdfTAfggnEOmkuWtwhFOGG4J5dvipHKxSk9WbnVX74WPnDjg9ZO7Y/1pwhDRV0pPipMRLYrsx6sDtm6qg6B3wVrJbDbrc/xBIxQAiWYeIznMdQzsn9D2aEPO0KIlGIKQfSj81wfCjG2JrllHkc5DxTcq583vffVrPMixSMvNSPxG/xAAPdFWmKlH9fAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Apps&quot;
+        title=&quot;Apps&quot;
+        src=&quot;/static/8882a3fc84518d666907184694d4e291/799d3/Apps.png&quot;
+        srcset=&quot;/static/8882a3fc84518d666907184694d4e291/00d96/Apps.png 148w,
+/static/8882a3fc84518d666907184694d4e291/0b23c/Apps.png 295w,
+/static/8882a3fc84518d666907184694d4e291/799d3/Apps.png 590w,
+/static/8882a3fc84518d666907184694d4e291/2a3d6/Apps.png 885w,
+/static/8882a3fc84518d666907184694d4e291/ae92f/Apps.png 1180w,
+/static/8882a3fc84518d666907184694d4e291/2e7db/Apps.png 1806w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Product를 발급하고 Restful Tool(ex:postman) 을 이용하여 발급받은 key, secret 항목을 넣어서 토쿤이 정상 발급되는지 테스트 해보면 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/df8a41ed8397476e943df48885964a9e/8a848/Token.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.62162162162163%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABTUlEQVQoz5WS20rDQBCG98m9EQ8g+gh64XPoTWtboeTS84nYtNAEEmo2u9lDfmc2B1QQ68DHLLOzf/4ZIkpZoigKZGmKNF0jiV+RJAnyPIdSCnVdwxiDqqoGuM5IOtta4XGtcf1GtfIDYrPZwNAjZy0s4Z1F0zRBaLlcYrFY0IfSUOvDdr0cPtQZj8ZoiCzL4L3Hz3DOYT6fYzabIY7j0MOiDN8Nb0iLNX3IDUQlZbAuKzmMaGlEdvDVFYtY60LmFTC61i2G1qIVTFXSyEUOWZaoCKV0K0hNLMYuWjeuc+iHzDiq93jqq8mQsHR4f37Cy+0N7u8ewr764EftfrZHaK1xfnaKvf1D7Owe4Oj4BFEU0Ximc+QGR3/BLoUiwWg6weXFJUZXU0wmU4zGY6xWq8HlNrA7zoLn/y22HfmbYH9oeLn0Dwa6MYe7fzj8BEmwB8DBjV4DAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Token&quot;
+        title=&quot;Token&quot;
+        src=&quot;/static/df8a41ed8397476e943df48885964a9e/799d3/Token.png&quot;
+        srcset=&quot;/static/df8a41ed8397476e943df48885964a9e/00d96/Token.png 148w,
+/static/df8a41ed8397476e943df48885964a9e/0b23c/Token.png 295w,
+/static/df8a41ed8397476e943df48885964a9e/799d3/Token.png 590w,
+/static/df8a41ed8397476e943df48885964a9e/2a3d6/Token.png 885w,
+/static/df8a41ed8397476e943df48885964a9e/ae92f/Token.png 1180w,
+/static/df8a41ed8397476e943df48885964a9e/8a848/Token.png 1480w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;참조&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.apigee.com/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials?hl=ko&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;구글doc OAuth 기능 붙이기&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[API Gateway 정리]]></title><description><![CDATA[이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다.  API Gateway란  API 게이트웨이는 API 클라이언트와 서비스 사이에 프록시 처럼 위치하여
  클라이언트로 부터 온 API…]]></description><link>https://comwls.github.io/api-gateway/</link><guid isPermaLink="false">https://comwls.github.io/api-gateway/</guid><pubDate>Tue, 21 Apr 2020 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;이글은 개인적인 블로그 글이며 기초적인 글은 생략되고 진행될수 있음을 말씀드립니다. &lt;/p&gt;
 &lt;br/&gt;
 &lt;h2 id=&quot;api-gateway란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-gateway%EB%9E%80&quot; aria-label=&quot;api gateway란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;API Gateway란&lt;/h2&gt;
